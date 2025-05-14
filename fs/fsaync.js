@@ -31,8 +31,8 @@ const filePath = path.join(__dirname, fileName)
 //fs.appendFile(): appends data to a file if the file doesn't exist it is created 
 // syntac: fs.appenFile(path,data,options, callback) 
 
-const updateFile = fs.appendFile(filePath, "\nhey i am update the file" , 'utf-8' , (err,data)=> {
-    if(err) console.error(err);
+const updateFile = fs.appendFile(filePath, "\nhey i am update the file", 'utf-8', (err, data) => {
+    if (err) console.error(err);
     else console.log("file has been updated ")
 })
 
@@ -45,3 +45,4 @@ const updateFile = fs.appendFile(filePath, "\nhey i am update the file" , 'utf-8
 //     if (err) console.log(err);
 //     else console.log('file is deleted ')
 // })
+
