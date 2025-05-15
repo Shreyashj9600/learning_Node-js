@@ -1,0 +1,14 @@
+{
+  "name": "learning_node",
+  "version": "1.0.0",
+  "description": "learnig node js ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shreyash",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
