@@ -1,11 +1,14 @@
-console.log('start');
+ const express = require('express')
 
-setTimeout(() => {
-    console.log('two sec');
-},2000)
+ const app = express();
 
-setTimeout(() => {
-    console.log('zero sec');
-},0)
+ app.get('/', (req,res) => {
+    res.send('welcome, this is home page');
+    res.end()
+ })
 
-console.log('end');
+ app.get('/about',(req,res) => {
+    res.send('hello this is about page ')
+ })
+
+ app.listen(3000)
