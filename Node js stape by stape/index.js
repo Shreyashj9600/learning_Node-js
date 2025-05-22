@@ -1,25 +1,25 @@
 const express = require('express')
-const path = require('path')
-
 const app = express();
 
-const publicPath = path.join(__dirname, 'public')
-// app.use(express.static(publicPath))
+const reqFilter = (req, res, next) => {
+    if (!req.query.age) {
+        res.send('pls provide a age ')
+    }
+    else if (req.query.age < 18) {
+        res.send('you can not access this page ')
+    } else {
+        next()
+    }
+}
 
-app.get('', (_, res) => {
-    res.sendFile(`${publicPath}/index.html`)
+app.use(reqFilter)
+
+app.get('/', (req, res) => {
+    res.send('welcome to home page')
 })
 
-app.get('/about', (_, res) => {
-    res.sendFile(`${publicPath}/about.html`)
-})
-
-app.get('/home', (_, res) => {
-    res.sendFile(`${publicPath}/home.html`)
-})
-
-app.get("*", (_, res) => {
-    res.sendFile(`${publicPath}\error.html`)
+app.get('/user', (req, res) => {
+    res.send('welcome to user page ')
 })
 
 app.listen(3000)
